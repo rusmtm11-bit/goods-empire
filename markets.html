@@ -10,11 +10,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    /* Дополнительные стили для карты и подсветки */
+    /* Стили для карточек регионов и карты */
     .markets-map {
       margin: 40px 0 20px;
     }
     .region-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: white;
+      padding: 18px 24px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
       cursor: pointer;
       transition: all 0.3s ease;
       border: 2px solid transparent;
@@ -26,7 +33,22 @@
     }
     .region-card.active {
       border-color: var(--primary-accent);
-      background: rgba(178,34,34,0.03);
+      background: rgba(178,34,34,0.02);
+    }
+    .region-flag {
+      font-size: 2.2rem;
+      line-height: 1;
+      min-width: 48px;
+      text-align: center;
+    }
+    .region-info h4 {
+      margin-bottom: 4px;
+      font-size: 1.1rem;
+    }
+    .region-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
     }
     .map-svg {
       width: 100%;
@@ -36,15 +58,23 @@
       box-shadow: var(--shadow-sm);
     }
     .map-region {
-      fill: #E9DFD1;
+      fill: rgba(233, 223, 209, 0.7);
       stroke: #1A2A3A;
       stroke-width: 1.5;
       transition: fill 0.3s;
+      cursor: pointer;
     }
     .map-region:hover,
     .map-region.highlight {
       fill: #D4AF37 !important;
-      fill-opacity: 0.6;
+      fill-opacity: 0.5;
+    }
+    .world-bg {
+      fill: none;
+      stroke: #B22222;
+      stroke-width: 0.8;
+      stroke-opacity: 0.15;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -90,73 +120,84 @@
       <div class="container narrow-content" data-aos="fade-up">
         <p class="lead">Goods Empire operates across Europe, the Middle East, North Africa, Asia, and the Americas. Our multi‑jurisdiction expertise ensures smooth cross‑border transactions and compliance with local requirements.</p>
         
-        <!-- Карточки регионов (над картой) -->
-        <div class="markets-regions" id="regionCards">
+        <!-- Карточки регионов в едином стиле -->
+        <div class="markets-regions" id="regionCards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
           <div class="region-card" data-region="eu">
-            <i class="fas fa-flag-eu"></i>
             <span class="region-flag">🇪🇺</span>
-            <h4>European Union</h4>
-            <p>Strategic sourcing and distribution hub.</p>
+            <div class="region-info">
+              <h4>European Union</h4>
+              <p>Strategic sourcing and distribution hub.</p>
+            </div>
           </div>
           <div class="region-card" data-region="uk">
-            <i class="fas fa-flag-uk"></i>
             <span class="region-flag">🇬🇧</span>
-            <h4>United Kingdom</h4>
-            <p>Post‑Brexit trade expertise.</p>
+            <div class="region-info">
+              <h4>United Kingdom</h4>
+              <p>Post‑Brexit trade expertise.</p>
+            </div>
           </div>
           <div class="region-card" data-region="mena">
-            <i class="fas fa-flag"></i>
             <span class="region-flag">🇦🇪 🇸🇦</span>
-            <h4>Middle East & GCC</h4>
-            <p>Food, consumer goods, and construction materials.</p>
+            <div class="region-info">
+              <h4>Middle East & GCC</h4>
+              <p>Food, consumer goods, and construction.</p>
+            </div>
           </div>
           <div class="region-card" data-region="africa">
-            <i class="fas fa-flag"></i>
             <span class="region-flag">🇲🇦 🇪🇬</span>
-            <h4>North Africa</h4>
-            <p>Agricultural and industrial trade.</p>
+            <div class="region-info">
+              <h4>North Africa</h4>
+              <p>Agricultural and industrial trade.</p>
+            </div>
           </div>
           <div class="region-card" data-region="asia">
-            <i class="fas fa-flag"></i>
             <span class="region-flag">🇨🇳 🇮🇳</span>
-            <h4>Asia Pacific</h4>
-            <p>Sourcing and manufacturing partnerships.</p>
+            <div class="region-info">
+              <h4>Asia Pacific</h4>
+              <p>Sourcing and manufacturing partnerships.</p>
+            </div>
           </div>
           <div class="region-card" data-region="americas">
-            <i class="fas fa-flag-usa"></i>
             <span class="region-flag">🇺🇸 🇧🇷</span>
-            <h4>Americas</h4>
-            <p>Import/export and distribution.</p>
+            <div class="region-info">
+              <h4>Americas</h4>
+              <p>Import/export and distribution.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Карта с подсветкой -->
+        <!-- Карта с фоновым изображением мира и подсветкой -->
         <div class="markets-map">
           <svg viewBox="0 0 1000 500" class="map-svg" id="worldMap">
-            <!-- Фоновый прямоугольник -->
             <rect width="1000" height="500" fill="#FDF8F2" rx="24" />
             
-            <!-- Европа (EU + UK) -->
+            <!-- Фоновая карта мира (контуры континентов) -->
+            <g class="world-bg">
+              <!-- Евразия -->
+              <path d="M400,80 L450,70 L520,60 L580,70 L650,80 L700,100 L750,130 L780,170 L760,220 L700,250 L640,240 L580,220 L520,200 L450,180 L400,160 Z" />
+              <!-- Африка -->
+              <path d="M480,240 L520,220 L570,230 L600,260 L590,300 L550,320 L500,310 L470,280 Z" />
+              <!-- Северная Америка -->
+              <path d="M120,100 L180,80 L240,90 L280,120 L270,170 L230,200 L180,210 L140,190 L110,150 Z" />
+              <!-- Южная Америка -->
+              <path d="M190,260 L230,250 L270,270 L280,320 L240,360 L200,350 L170,310 Z" />
+              <!-- Австралия -->
+              <path d="M750,320 L800,310 L830,330 L820,360 L780,360 L750,340 Z" />
+            </g>
+            
+            <!-- Интерактивные регионы -->
             <path class="map-region" data-region="eu" d="M450,100 L500,80 L550,90 L570,120 L560,150 L520,160 L480,150 L450,130 Z" />
             <path class="map-region" data-region="uk" d="M430,110 L450,95 L470,100 L460,120 L440,125 Z" />
-            
-            <!-- Ближний Восток / MENA -->
             <path class="map-region" data-region="mena" d="M520,200 L560,190 L600,200 L610,230 L590,250 L550,240 L520,230 Z" />
             <path class="map-region" data-region="africa" d="M480,240 L520,230 L550,240 L560,280 L520,300 L480,290 L460,270 Z" />
-            
-            <!-- Азия -->
             <path class="map-region" data-region="asia" d="M650,150 L700,130 L750,140 L780,170 L760,200 L700,210 L650,190 Z" />
-            
-            <!-- Америки -->
             <path class="map-region" data-region="americas" d="M150,150 L200,130 L250,140 L260,180 L220,220 L170,210 L140,190 Z" />
             <path class="map-region" data-region="americas" d="M200,250 L240,240 L270,260 L260,300 L220,320 L180,310 L170,280 Z" />
             
-            <!-- Линии-связи -->
+            <!-- Декоративные линии и точки -->
             <line x1="280" y1="200" x2="450" y2="150" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.5" />
             <line x1="570" y1="220" x2="650" y2="180" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.5" />
             <line x1="480" y1="260" x2="520" y2="230" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.5" />
-            
-            <!-- Точки городов -->
             <circle cx="480" cy="150" r="5" fill="#B22222" />
             <circle cx="530" cy="220" r="5" fill="#B22222" />
             <circle cx="700" cy="170" r="5" fill="#B22222" />
@@ -168,7 +209,6 @@
   </main>
 
   <footer class="footer">
-    <!-- footer identical to others -->
     <div class="container footer__grid">
       <div class="footer__brand" data-aos="fade-up">
         <img src="assets/images/logo.svg" alt="Goods Empire" width="40" height="40">
@@ -213,7 +253,6 @@
   <script>
     AOS.init({ duration: 800, once: true });
     
-    // Интерактивность карты: подсветка при наведении на карточку
     const regionCards = document.querySelectorAll('.region-card');
     const mapRegions = document.querySelectorAll('.map-region');
     
@@ -240,7 +279,6 @@
       });
     });
     
-    // Подсветка при наведении прямо на регион карты
     mapRegions.forEach(region => {
       region.addEventListener('mouseenter', () => {
         const regionId = region.dataset.region;
