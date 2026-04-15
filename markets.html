@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Markets · Goods Empire</title>
-  <meta name="description" content="Global reach across Europe, MENA, Asia, Americas.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  ... (active на Markets)
 </head>
 <body>
-  <header class="header">...</header>
-
+  <header>...</header>
   <main>
-    <section class="page-hero">
-      <div class="container">
+    <section class="page-hero page-hero--markets">
+      <div class="container" data-aos="fade-up">
         <h1>Global Markets</h1>
         <p>Active trade corridors and partner networks worldwide.</p>
       </div>
     </section>
-
     <section class="section">
-      <div class="container narrow-content">
-        <p>Goods Empire operates across Europe, the Middle East, North Africa, Asia, and the Americas. Our multi‑jurisdiction expertise ensures smooth cross‑border transactions and compliance with local requirements.</p>
-        <div class="markets-map-placeholder" style="background:#eef2f6; border-radius:20px; padding:40px; text-align:center; margin:40px 0;">
-          <i class="fas fa-map-marked-alt" style="font-size:3rem; color:var(--primary-deep);"></i>
-          <p style="margin-top:20px;">Interactive map placeholder — showing key trade regions</p>
+      <div class="container narrow-content" data-aos="fade-up">
+        <p class="lead">Goods Empire operates across Europe, the Middle East, North Africa, Asia, and the Americas. Our multi‑jurisdiction expertise ensures smooth cross‑border transactions and compliance with local requirements.</p>
+        <div class="markets-map">
+          <!-- Placeholder для карты или SVG -->
+          <svg viewBox="0 0 800 400" style="width:100%; height:auto; background:#f4f8fe; border-radius:24px;">
+            <rect width="800" height="400" fill="#f4f8fe" rx="24" />
+            <text x="400" y="200" text-anchor="middle" fill="#0B2B5E" font-size="20">Interactive map coming soon</text>
+          </svg>
         </div>
-        <div class="markets-list">
-          <h3>Key regions:</h3>
-          <ul>
-            <li>European Union</li>
-            <li>United Kingdom</li>
-            <li>Middle East & Gulf Cooperation Council</li>
-            <li>North Africa</li>
-            <li>Southeast Asia</li>
-            <li>North America</li>
-            <li>Latin America</li>
-          </ul>
+        <div class="markets-regions">
+          <div class="region-card"><i class="fas fa-flag-eu"></i><h4>European Union</h4><p>Strategic sourcing and distribution hub.</p></div>
+          <div class="region-card"><i class="fas fa-flag-uk"></i><h4>United Kingdom</h4><p>Post‑Brexit trade expertise.</p></div>
+          <div class="region-card"><i class="fas fa-flag"></i><h4>Middle East & GCC</h4><p>Food, consumer goods, and construction materials.</p></div>
+          <div class="region-card"><i class="fas fa-flag"></i><h4>North Africa</h4><p>Agricultural and industrial trade.</p></div>
+          <div class="region-card"><i class="fas fa-flag"></i><h4>Southeast Asia</h4><p>Sourcing and manufacturing partnerships.</p></div>
+          <div class="region-card"><i class="fas fa-flag-usa"></i><h4>Americas</h4><p>Import/export and distribution.</p></div>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="footer">...</footer>
-  <script src="assets/js/main.js"></script>
+  <footer>...</footer>
 </body>
 </html>
