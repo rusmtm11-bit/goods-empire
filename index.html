@@ -5,14 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Goods Empire · International Trading & Supply Chain</title>
   <meta name="description" content="Global import, export, sourcing, wholesale distribution and supply chain across food, agriculture, consumer and industrial goods.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- Preloader (опционально) -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__logo">
+      <img src="assets/images/logo.svg" alt="Goods Empire">
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="container header__container">
-      <a href="index.html" class="logo">
+      <a href="index.html" class="logo" data-aos="fade-right">
         <img src="assets/images/logo.svg" alt="Goods Empire" width="48" height="48">
         <span class="logo__text">Goods<span class="logo__accent">Empire</span></span>
       </a>
@@ -32,143 +43,165 @@
           <li><a href="quality.html" class="nav__link">Compliance</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
-        <a href="contact.html" class="btn btn--primary nav__cta">Inquire</a>
+        <a href="contact.html" class="btn btn--primary nav__cta" data-aos="fade-left">Inquire</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container hero__grid">
-        <div class="hero__content">
+        <div class="hero__content" data-aos="fade-up" data-aos-delay="100">
           <h1 class="hero__title">
-            International Trading,<br>Sourcing & Distribution
+            Global Trade, <br><span class="text-accent">Seamless Execution</span>
           </h1>
-          <p class="hero__subtitle">Goods Empire orchestrates cross‑border trade, procurement, wholesale supply and supply chain solutions across food, agriculture, consumer, household and industrial sectors.</p>
+          <p class="hero__subtitle">Goods Empire orchestrates cross‑border trade, procurement, wholesale supply and supply chain solutions across food, agriculture, consumer, household and industrial sectors. We are the partner of choice for enterprises seeking reliability and scale.</p>
           <div class="hero__actions">
             <a href="contact.html" class="btn btn--primary btn--lg">Partner with us</a>
             <a href="products.html" class="btn btn--outline btn--lg">Explore categories</a>
           </div>
           <div class="hero__stats">
-            <div class="stat">
+            <div class="stat" data-aos="zoom-in" data-aos-delay="200">
               <span class="stat__number">50+</span>
               <span class="stat__label">Global markets</span>
             </div>
-            <div class="stat">
+            <div class="stat" data-aos="zoom-in" data-aos-delay="300">
               <span class="stat__number">200+</span>
               <span class="stat__label">Vetted suppliers</span>
             </div>
-            <div class="stat">
+            <div class="stat" data-aos="zoom-in" data-aos-delay="400">
               <span class="stat__number">24/7</span>
               <span class="stat__label">Trade coordination</span>
             </div>
           </div>
         </div>
-        <div class="hero__visual">
+        <div class="hero__visual" data-aos="fade-left" data-aos-delay="200">
           <svg viewBox="0 0 560 400" class="hero__svg">
             <rect x="60" y="80" width="440" height="240" rx="24" fill="#F0F4FA" />
             <path d="M160 160 L280 100 L400 160 L400 280 L160 280 L160 160" fill="#0B2B5E" fill-opacity="0.08" />
-            <circle cx="280" cy="190" r="50" fill="#C0392B" fill-opacity="0.2" />
-            <path d="M220 230 L340 230 L370 270 L190 270 L220 230" fill="#C0392B" fill-opacity="0.3" />
-            <rect x="240" y="280" width="80" height="40" rx="8" fill="#1E3A5F" fill-opacity="0.6" />
+            <circle cx="280" cy="190" r="50" fill="#C0392B" fill-opacity="0.15" />
+            <path d="M220 230 L340 230 L370 270 L190 270 L220 230" fill="#C0392B" fill-opacity="0.25" />
+            <rect x="240" y="280" width="80" height="40" rx="8" fill="#1E3A5F" fill-opacity="0.7" />
             <text x="280" y="340" text-anchor="middle" fill="#0B2B5E" font-weight="700" font-size="18">End‑to‑end trade</text>
+            <!-- Декоративные линии -->
+            <line x1="100" y1="60" x2="460" y2="60" stroke="#C0392B" stroke-width="2" stroke-dasharray="6 6" opacity="0.3" />
+            <line x1="100" y1="360" x2="460" y2="360" stroke="#0B2B5E" stroke-width="2" stroke-dasharray="6 6" opacity="0.3" />
           </svg>
         </div>
       </div>
     </section>
 
+    <!-- Business Scope -->
     <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
           <h2 class="section-title">Diversified trade & supply</h2>
           <p class="section-subtitle">One partner — full spectrum of commercial operations</p>
         </div>
         <div class="grid-4">
-          <div class="card-icon">
-            <i class="fas fa-ship card-icon__icon"></i>
+          <div class="card-icon" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-icon__icon-wrapper">
+              <i class="fas fa-ship"></i>
+            </div>
             <h3>Import · Export</h3>
-            <p>Cross‑border trade, global sourcing, wholesale distribution</p>
+            <p>Cross‑border trade, global sourcing, wholesale distribution across continents.</p>
           </div>
-          <div class="card-icon">
-            <i class="fas fa-hand-holding-box card-icon__icon"></i>
+          <div class="card-icon" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-icon__icon-wrapper">
+              <i class="fas fa-hand-holding-box"></i>
+            </div>
             <h3>Procurement</h3>
-            <p>Supplier sourcing, contract supply, bulk purchasing</p>
+            <p>Strategic sourcing, contract supply, bulk purchasing from vetted producers.</p>
           </div>
-          <div class="card-icon">
-            <i class="fas fa-chart-network card-icon__icon"></i>
+          <div class="card-icon" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-icon__icon-wrapper">
+              <i class="fas fa-chart-network"></i>
+            </div>
             <h3>Distribution</h3>
-            <p>B2B supply, private label, branded product distribution</p>
+            <p>B2B supply, private label programs, branded product distribution worldwide.</p>
           </div>
-          <div class="card-icon">
-            <i class="fas fa-warehouse card-icon__icon"></i>
-            <h3>Supply chain</h3>
-            <p>Freight, warehousing, cold chain, documentation</p>
+          <div class="card-icon" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-icon__icon-wrapper">
+              <i class="fas fa-warehouse"></i>
+            </div>
+            <h3>Supply Chain</h3>
+            <p>Freight, warehousing, cold chain, documentation – full visibility and control.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Categories Preview -->
     <section class="section section--light">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
           <h2 class="section-title">Product categories at a glance</h2>
           <a href="products.html" class="link-arrow">View all <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="grid-4">
-          <div class="card-category">
+          <div class="card-category" data-aos="flip-left" data-aos-delay="100">
             <div class="card-category__icon"><i class="fas fa-apple-alt"></i></div>
-            <h4>Food & grocery</h4>
-            <p>Pasta, olive oil, preserves, beverages, confectionery</p>
+            <h4>Food & Grocery</h4>
+            <p>Pasta, olive oil, preserves, beverages, confectionery, gourmet products.</p>
           </div>
-          <div class="card-category">
+          <div class="card-category" data-aos="flip-left" data-aos-delay="200">
             <div class="card-category__icon"><i class="fas fa-seedling"></i></div>
-            <h4>Fresh produce</h4>
-            <p>Fruits, vegetables, exotic & tropical, grower partnerships</p>
+            <h4>Fresh Produce</h4>
+            <p>Fruits, vegetables, exotic & tropical items, grower partnerships.</p>
           </div>
-          <div class="card-category">
+          <div class="card-category" data-aos="flip-left" data-aos-delay="300">
             <div class="card-category__icon"><i class="fas fa-couch"></i></div>
-            <h4>Household & consumer</h4>
-            <p>Kitchenware, home décor, storage, stationery, toys</p>
+            <h4>Household & Consumer</h4>
+            <p>Kitchenware, home décor, storage, stationery, toys, seasonal items.</p>
           </div>
-          <div class="card-category">
+          <div class="card-category" data-aos="flip-left" data-aos-delay="400">
             <div class="card-category__icon"><i class="fas fa-microchip"></i></div>
-            <h4>Electronics & industrial</h4>
-            <p>Batteries, scales, adhesives, silica gel, consumables</p>
+            <h4>Electronics & Industrial</h4>
+            <p>Batteries, scales, adhesives, silica gel, industrial consumables.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Why Choose Us + Compliance -->
     <section class="section">
       <div class="container two-columns">
-        <div>
+        <div data-aos="fade-right">
           <h2 class="section-title section-title--left">Why enterprises choose Goods Empire</h2>
           <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Diversified portfolio across food & non‑food</li>
-            <li><i class="fas fa-check-circle"></i> International supplier network & due diligence</li>
-            <li><i class="fas fa-check-circle"></i> Flexible supply models, private label & bulk</li>
-            <li><i class="fas fa-check-circle"></i> Integrated logistics & customs support</li>
-            <li><i class="fas fa-check-circle"></i> Compliance‑focused, bank‑grade transparency</li>
+            <li><i class="fas fa-check-circle"></i> Diversified portfolio across food & non‑food – one partner for all needs</li>
+            <li><i class="fas fa-check-circle"></i> International supplier network with rigorous due diligence</li>
+            <li><i class="fas fa-check-circle"></i> Flexible supply models: bulk, private label, just‑in‑time</li>
+            <li><i class="fas fa-check-circle"></i> Integrated logistics & customs support to reduce friction</li>
+            <li><i class="fas fa-check-circle"></i> Compliance‑focused, bank‑grade transparency and reporting</li>
+            <li><i class="fas fa-check-circle"></i> Dedicated account management for seamless communication</li>
           </ul>
-          <a href="quality.html" class="btn btn--outline" style="margin-top:24px;">Our compliance standards</a>
+          <a href="quality.html" class="btn btn--outline" style="margin-top:28px;">Our compliance standards</a>
         </div>
-        <div>
+        <div data-aos="fade-left">
           <div class="info-card">
             <i class="fas fa-file-signature info-card__icon"></i>
-            <h4>Quality & due diligence</h4>
-            <p>Supplier audits, documentation support, responsible sourcing.</p>
+            <h4>Quality & Due Diligence</h4>
+            <p>Supplier audits, documentation support, responsible sourcing practices.</p>
           </div>
           <div class="info-card">
             <i class="fas fa-globe-americas info-card__icon"></i>
-            <h4>Global trade partners</h4>
+            <h4>Global Trade Partners</h4>
             <p>Europe, MENA, Asia, Americas — multi‑jurisdiction expertise.</p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-chart-line info-card__icon"></i>
+            <h4>Market Intelligence</h4>
+            <p>Real‑time insights on pricing, demand, and regulatory changes.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta">
-      <div class="container cta__content">
+      <div class="container cta__content" data-aos="zoom-in">
         <h2>Ready to streamline your international supply?</h2>
         <p>Speak with our trade specialists — sourcing, logistics, or partnership inquiries.</p>
         <a href="contact.html" class="btn btn--light">Contact us</a>
@@ -178,11 +211,15 @@
 
   <footer class="footer">
     <div class="container footer__grid">
-      <div class="footer__brand">
+      <div class="footer__brand" data-aos="fade-up">
         <img src="assets/images/logo.svg" alt="Goods Empire" width="40" height="40">
         <p>Goods Empire — international trading, sourcing & supply chain solutions.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+        </div>
       </div>
-      <div class="footer__nav">
+      <div class="footer__nav" data-aos="fade-up" data-aos-delay="100">
         <h4>Explore</h4>
         <ul>
           <li><a href="about.html">About</a></li>
@@ -191,7 +228,7 @@
           <li><a href="services.html">Services</a></li>
         </ul>
       </div>
-      <div class="footer__nav">
+      <div class="footer__nav" data-aos="fade-up" data-aos-delay="200">
         <h4>Business</h4>
         <ul>
           <li><a href="markets.html">Markets</a></li>
@@ -199,19 +236,28 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div class="footer__contact">
+      <div class="footer__contact" data-aos="fade-up" data-aos-delay="300">
         <h4>Trade desk</h4>
         <p><i class="fas fa-envelope"></i> trade@goodsempire.com</p>
         <p><i class="fas fa-phone-alt"></i> +44 20 7946 0123</p>
         <p><i class="fab fa-whatsapp"></i> +44 7911 123456</p>
       </div>
     </div>
-    <div class="container footer__bottom">
+    <div class="container footer__bottom" data-aos="fade-up">
       <p>© 2025 Goods Empire. All rights reserved.</p>
-      <p><a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookie Policy</a></p>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 100 });
+    // Preloader
+    window.addEventListener('load', function() {
+      document.getElementById('preloader').classList.add('hidden');
+    });
+  </script>
 </body>
 </html>
