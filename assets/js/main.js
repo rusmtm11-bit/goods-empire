@@ -9,7 +9,7 @@
     });
   }
 
-  // Плавный скролл для якорных ссылок
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -20,5 +20,11 @@
         target.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  });
+
+  // Preloader hide on load
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) preloader.classList.add('hidden');
   });
 })();
